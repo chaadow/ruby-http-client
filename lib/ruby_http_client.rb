@@ -184,8 +184,8 @@ module SendGrid
     #   - The final url string
     #
     def build_url(query_params: nil)
-      url = [add_version(''), *@url_path].join('/')
-      url = build_query_params(url, query_params) if query_params
+      url = [add_version(+''), *@url_path].join('/')
+      url = build_query_params(+url, query_params) if query_params
       URI.parse("#{@host}#{url}")
     end
 
